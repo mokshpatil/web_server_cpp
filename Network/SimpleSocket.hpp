@@ -1,5 +1,5 @@
-#ifndef Simple_Socket.hpp
-#define Simple_Socket.hpp
+#ifndef SimpleSocket_hpp
+#define SimpleSocket_hpp
 
 #include <stdio.h>
 #include <sys/socket.h>
@@ -17,8 +17,11 @@ namespace HDE{
 
         public:
             SimpleSocket(int domain, int service, int protocol, int port, u_long interface);
-            virtual int connect_socket(int sock, struct sockaddr_in address);
+            virtual int connect_socket(int sock, struct sockaddr_in address)=0;
             void test_connection(int);
+            struct sockaddr_in get_address();
+            int get_socket();
+            int get_connection();
     };
 
 }

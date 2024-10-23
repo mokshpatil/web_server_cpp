@@ -1,4 +1,4 @@
-#include "Simple_Socket.hpp"
+#include "SimpleSocket.hpp"
 
 HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long interface){
     
@@ -7,8 +7,6 @@ HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port,
     address.sin_addr.s_addr = htonl(interface);
     sock = socket(domain, service, protocol);
     test_connection(sock);
-    connection = connect_socket(sock, address);
-    test_connection(connection);
 }
 
 void HDE::SimpleSocket::test_connection(int testObject){
