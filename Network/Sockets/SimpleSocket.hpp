@@ -16,12 +16,13 @@ namespace HDE{
         struct sockaddr_in address;
 
         public:
-            SimpleSocket(int domain, int service, int protocol, int port, u_long interface);
-            virtual int connect_socket(int sock, struct sockaddr_in address)=0;
+            SimpleSocket(int domain, int service, int protocol, int port, unsigned long interface);
+            virtual int socket_network(int sock, struct sockaddr_in address)=0;
             void test_connection(int);
             struct sockaddr_in get_address();
             int get_socket();
             int get_connection();
+            void set_connection(int);
     };
 
 }

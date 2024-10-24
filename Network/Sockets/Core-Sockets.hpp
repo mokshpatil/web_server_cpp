@@ -1,5 +1,5 @@
-#ifndef core_sockets_hpp
-#define core_sockets_hpp
+#ifndef Core_Sockets_hpp
+#define Core_Sockets_hpp
 
 #include <stdio.h>
 

@@ -1,6 +1,6 @@
 #include "SimpleSocket.hpp"
 
-HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long interface){
+HDE::SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, unsigned long interface){
     
     address.sin_port = htons(port);
     address.sin_family = domain;
@@ -29,4 +29,8 @@ int HDE::SimpleSocket::get_socket(){
 
 int HDE::SimpleSocket::get_connection(){
     return connection;
+}
+
+void HDE::SimpleSocket::set_connection(int con){
+    connection = con;
 }
